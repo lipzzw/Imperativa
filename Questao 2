@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Q2 {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        double[] alturas = new double[10];
+        int[] sexo = new int[10];
+        
+
+        for (int i = 0; i < alturas.length; i++) {
+            alturas[i] = s.nextDouble();
+        }
+
+        for (int i = 0; i < sexo.length; i++) {
+            sexo[i] = s.nextInt();
+
+        }
+        
+        MaiorH(alturas);
+        MenorH(alturas);
+    
+    }
+
+    public static double MaiorH(double[] alturas){
+        double maior = alturas[0];
+        for (double num : alturas) {
+            if(num > maior){
+                maior = num;
+            }   
+        }
+        return maior;
+    }
+
+    public static double MenorH(double[] alturas){
+        double menor = alturas[0];
+        for (double num : alturas) {
+            if(num < menor){
+                menor = num;
+            }   
+        }
+        return menor;
+    }
+
+    public static int Mulheres(int[] sexo){
+        int quantidade = 0;
+
+        for (int num : sexo) {
+            if(num == 1){
+                quantidade++;
+            }
+        }
+        return quantidade;
+    }
+
+    public static double MediaAlturas(double[] alturas, int[] sexo){
+        double soma = 0;
+        int quantidadeHomens = 0;
+
+        for (int i = 0; i < alturas.length; i++) {
+            if (sexo[i] == 2) {
+                soma += alturas[i];
+                quantidadeHomens++;
+            }
+        }
+        
+        if (quantidadeHomens > 0) {
+        return soma / quantidadeHomens;
+    } else {
+        return 0;
+    }
+
+    }
+
+}
