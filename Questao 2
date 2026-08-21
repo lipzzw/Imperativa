@@ -7,11 +7,12 @@ public class Q2 {
         double[] alturas = new double[10];
         int[] sexo = new int[10];
         
+        System.out.println("Digite 10 alturas");
 
         for (int i = 0; i < alturas.length; i++) {
             alturas[i] = s.nextDouble();
         }
-
+        System.out.println("Digite 1 ou 2 ");
         for (int i = 0; i < sexo.length; i++) {
             sexo[i] = s.nextInt();
 
@@ -19,6 +20,13 @@ public class Q2 {
         
         MaiorH(alturas);
         MenorH(alturas);
+        Mulheres(sexo);
+        MediaAlturas(alturas, sexo);
+
+        System.out.println("Maior altura" + MaiorH(alturas));
+        System.out.println("Menor altura" + MenorH(alturas));
+        System.out.println("Quantidade de mulheres" + Mulheres(sexo));
+        System.out.println("Media"+ MediaAlturas(alturas, sexo));
     
     }
 
