@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Q1{
+    static void main() {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Digite altura da parede");
+       double altura = s.nextDouble();
+        System.out.println("Digite largura da parede");
+       double largura = s.nextDouble();
+        System.out.println("Digite altura do azulejo");
+       double alturaAzulejo = s.nextDouble();
+        System.out.println("Digite largura do azulejo");
+       double larguraAzulejo = s.nextDouble();
+
+       System.out.println(operacaoAzul(altura,largura,alturaAzulejo,larguraAzulejo));
+    }
+    public static double operacaoAzul(double altura, double largura, double alturaAzulejo, double larguraAzulejo){
+        return (altura*largura)/(larguraAzulejo*alturaAzulejo);
+    }
+}
