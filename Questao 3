@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Q1{
+    static void main() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Digite o numero de funcionarios");
+        int Quantidadefuncionarios = s.nextInt();
+        double somaSalarios = 0;
+
+        for (int i = 0; i < Quantidadefuncionarios;i++ ){
+            somaSalarios += s.nextDouble();
+        }
+        System.out.print(media(somaSalarios,Quantidadefuncionarios));
+    }
+
+    public static double media(double totalsalarios, int Quantidadefunciorios){
+        return totalsalarios/Quantidadefunciorios;
+    }
+}
