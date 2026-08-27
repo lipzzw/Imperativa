@@ -1,0 +1,23 @@
+package ListaImperativa;
+
+import java.util.Scanner;
+
+public class Questao6 {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Digite a massa em Kg");
+        double massa = s.nextDouble();
+        System.out.println("Digite a altura em Metros");
+        double altura = s.nextDouble();
+        System.out.println("Digite o tempo em segundos");
+        int tempo = s.nextInt();
+
+        System.out.println("Potencia necessaria:" +(calculo(massa,altura,tempo)));
+    }
+
+    public static double calculo(double massa, double altura, int tempo){
+        double potenciaMecanica = (massa * 9.81 * altura)/tempo;
+        return potenciaMecanica/745.6999;
+    }
+}
