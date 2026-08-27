@@ -1,0 +1,20 @@
+package ListaImperativa;
+
+import java.util.Scanner;
+
+public class Questao5 {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Digite o raio do cilindro:");
+        double raio = s.nextDouble();
+        System.out.println("Digite a altura do cilindro:");
+        double altura = s.nextDouble();
+
+        System.out.println("Volome da lata de ´óleo:" +volumeCilindro(raio,altura));
+    }
+
+    public static double volumeCilindro(double raio, double altura){
+        return Math.PI * (raio*raio) * altura;
+    }
+}
