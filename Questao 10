@@ -1,0 +1,38 @@
+ import java.util.Scanner;
+ public class Questao10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double preco;
+        double total = 0;
+        double desconto;
+        double valorFinal;
+
+        while (true) {
+            preco = sc.nextDouble();
+
+            if (preco == 0) {
+                break;
+            }
+
+            total += preco;
+        }
+
+        if (total > 500) {
+            desconto = total * 0.15;
+        } else if (total > 200) {
+            desconto = total * 0.10;
+        } else {
+            desconto = 0;
+        }
+
+        valorFinal = total - desconto;
+
+        System.out.printf("Total da compra: %.2f%n", total);
+        System.out.printf("Desconto: %.2f%n", desconto);
+        System.out.printf("Valor final: %.2f%n", valorFinal);
+
+       
+    }
+}
+
