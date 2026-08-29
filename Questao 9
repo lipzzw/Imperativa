@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Questao9 {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Digite a quantidade de alunos");
+        int quantidadeAlunos = s.nextInt();
+        
+        double[][] notas = new double[quantidadeAlunos][3];
+        double[] medias = new double[quantidadeAlunos];
+
+         
+
+        for(int i = 0; i < quantidadeAlunos; i++){
+
+            System.out.println("\nAluno " + (i+1));
+
+            System.out.print("Nota 1: ");
+            notas[i][0] = s.nextDouble();
+
+            System.out.print("Nota 2: ");
+            notas[i][1] = s.nextDouble();
+
+            System.out.print("Nota 3 ");
+            notas[i][2] = s.nextDouble();
+
+            medias[i] = calcularMedia(notas[i][0], notas[i][1], notas[i][2]);
+
+            String situacao = situacao(medias[i]);
+
+            System.out.println("Media: " + medias[i]);
+            System.out.println("Situação: " + situacao);
+        }
+
+        double mediaTurma = mediaTurma(medias);
+
+        System.out.println("\nMedia geral da turma: " + mediaTurma);
+
+    }
+
+    public static double calcularMedia(double nota1, double nota2, double nota3){
+        return (nota1 + nota2 + nota3)/3;
+    }
+
+    public static String situacao(double media){
+        if(media >= 7){
+            return "Aprovado";
+        }else if (media >= 5){
+            return "Recuperação";
+        }else{
+            return "Reprovado";
+        }
+    }
+
+    public static double mediaTurma(double[] medias){
+        double soma = 0;
+
+        for(int i = 0; i < medias.length; i++){
+            soma += medias[i];
+        }
+        return soma / medias.length;
+    }
+        
+}
+
