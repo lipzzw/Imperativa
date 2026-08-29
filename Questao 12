@@ -1,0 +1,116 @@
+import java.util.Scanner;
+public class Questao12 {
+    
+    public static int quantidadeNumeros(int[] numeros, int quantidade) {
+        return quantidade;
+    }
+
+    public static int somaNumeros(int[] numeros, int quantidade) {
+        int soma = 0;
+
+        for (int i = 0; i < quantidade; i++) {
+            soma += numeros[i];
+        }
+
+        return soma;
+    }
+
+    public static double mediaNumeros(int[] numeros, int quantidade) {
+        int soma = somaNumeros(numeros, quantidade);
+
+        return (double) soma / quantidade;
+    }
+
+    public static int maiorNumero(int[] numeros, int quantidade) {
+        int maior = numeros[0];
+
+        for (int i = 1; i < quantidade; i++) {
+            if (numeros[i] > maior) {
+                maior = numeros[i];
+            }
+        }
+
+        return maior;
+    }
+
+    public static int menorNumero(int[] numeros, int quantidade) {
+        int menor = numeros[0];
+
+        for (int i = 1; i < quantidade; i++) {
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+            }
+        }
+
+        return menor;
+    }
+
+    public static int quantidadePares(int[] numeros, int quantidade) {
+        int pares = 0;
+
+        for (int i = 0; i < quantidade; i++) {
+            if (numeros[i] % 2 == 0) {
+                pares++;
+            }
+        }
+
+        return pares;
+    }
+
+    public static int quantidadeImpares(int[] numeros, int quantidade) {
+        int impares = 0;
+
+        for (int i = 0; i < quantidade; i++) {
+            if (numeros[i] % 2 != 0) {
+                impares++;
+            }
+        }
+
+        return impares;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int[] numeros = new int[100];
+        int quantidade = 0;
+        int numero;
+
+       
+        do {
+            numero = sc.nextInt();
+
+            if (numero != -1) {
+                numeros[quantidade] = numero;
+                quantidade++;
+            }
+
+        } while (numero != -1);
+
+        
+        System.out.println("Quantidade de números válidos informados: "
+                + quantidadeNumeros(numeros, quantidade));
+
+        System.out.println("Soma: "
+                + somaNumeros(numeros, quantidade));
+
+        System.out.println("Média: "
+                + mediaNumeros(numeros, quantidade));
+
+        System.out.println("Maior número: "
+                + maiorNumero(numeros, quantidade));
+
+        System.out.println("Menor número: "
+                + menorNumero(numeros, quantidade));
+
+        System.out.println("Quantidade de pares: "
+                + quantidadePares(numeros, quantidade));
+
+        System.out.println("Quantidade de ímpares: "
+                + quantidadeImpares(numeros, quantidade));
+
+        
+    }
+}
+
